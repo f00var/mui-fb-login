@@ -120,6 +120,10 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   className?: string;
 
+  variant?: string;
+
+  color?: string;
+
   style?: CSSProperties;
 
   /** Children Component
