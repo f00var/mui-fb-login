@@ -22,7 +22,6 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     variant,
     color,
     style,
-    children = 'Login with Facebook',
     render,
     autoLoad = false,
     useRedirect = false,
@@ -116,14 +115,13 @@ export default function FacebookLogin(props: FacebookLoginProps) {
 
   return (
     <Button
-	  variant={varaint}
+	  variant={variant}
 	  color={color}
       onClick={handleButtonClick}
       className={className}
       style={style}
     >
     <FacebookIcon />
-      {children}
     </Button>
   );
 }

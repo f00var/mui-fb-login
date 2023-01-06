@@ -1,4 +1,4 @@
-import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import { FB } from './fb.type';
 
 import {
@@ -120,15 +120,15 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   className?: string;
 
-  variant?: string;
+  variant?: "text" | "outlined" | "contained";
 
-  color?: string;
+  color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 
   style?: CSSProperties;
 
   /** Children Component
    * @default "Login with Facebook" */
-  children?: ReactNode | ReactNodeArray;
+  //children?: ReactNode | ReactNodeArray;
 
   /** render custom component */
   render?: (props: {

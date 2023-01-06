@@ -1,4 +1,4 @@
-import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import { FB } from './fb.type';
 import { SuccessResponse, FailResponse, ProfileSuccessResponse } from './response.type';
 export type InitParams = {
@@ -80,10 +80,11 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
     onFail?: (err: FailResponse) => void;
     onProfileSuccess?: (res: ProfileSuccessResponse) => void;
     className?: string;
+    variant?: "text" | "outlined" | "contained";
+    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
     style?: CSSProperties;
     /** Children Component
      * @default "Login with Facebook" */
-    children?: ReactNode | ReactNodeArray;
     /** render custom component */
     render?: (props: {
         onClick?: () => void;
