@@ -120,9 +120,11 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   className?: string;
 
-  variant?: "text" | "outlined" | "contained";
+  // Button parameter
+  //variant?: "text" | "outlined" | "contained";
 
-  color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  // Facebook color fixed
+  //color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 
   style?: CSSProperties;
 

@@ -39,9 +39,17 @@ const react_1 = __importStar(require("react"));
 const material_1 = require("@mui/material");
 const Facebook_1 = __importDefault(require("@mui/icons-material/Facebook"));
 const facebook_login_client_1 = require("./facebook-login.client");
+const styles_1 = require("@mui/material/styles");
+const theme = (0, styles_1.createTheme)({
+    palette: {
+        primary: {
+            main: '#4267B2',
+        },
+    },
+});
 function FacebookLogin(props) {
     var _a, _b;
-    const { appId, language = 'en_US', scope = 'public_profile, email', fields = 'name,email,picture', onSuccess, onFail, onProfileSuccess, className, variant, color, style, render, autoLoad = false, useRedirect = false, useCustomerChat = false, } = props;
+    const { appId, language = 'en_US', scope = 'public_profile, email', fields = 'name,email,picture', onSuccess, onFail, onProfileSuccess, className, style, render, autoLoad = false, useRedirect = false, useCustomerChat = false, } = props;
     const initParams = Object.assign(Object.assign({ version: 'v9.0', xfbml: false, cookie: false, localStorage: true }, props.initParams), { appId });
     const dialogParams = Object.assign(Object.assign({ redirect_uri: typeof window !== 'undefined' ? location.origin + location.pathname : '/', state: 'facebookdirect', response_type: 'code' }, props.dialogParams), { client_id: appId });
     const loginOptions = Object.assign(Object.assign({ return_scopes: false, ignoreSdkError: false }, props.loginOptions), { auth_nonce: typeof ((_a = props.loginOptions) === null || _a === void 0 ? void 0 : _a.auth_nonce) === 'function'
@@ -93,7 +101,8 @@ function FacebookLogin(props) {
             logout: facebook_login_client_1.FacebookLoginClient.logout,
         });
     }
-    return (react_1.default.createElement(material_1.Button, { variant: variant, color: color, onClick: handleButtonClick, className: className, style: style },
-        react_1.default.createElement(Facebook_1.default, null)));
+    return (react_1.default.createElement(styles_1.ThemeProvider, { theme: theme },
+        react_1.default.createElement(material_1.Fab, { color: "primary", onClick: handleButtonClick, className: className, style: style },
+            react_1.default.createElement(Facebook_1.default, null))));
 }
 exports.default = FacebookLogin;

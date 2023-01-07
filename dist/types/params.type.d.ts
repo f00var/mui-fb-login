@@ -80,8 +80,6 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
     onFail?: (err: FailResponse) => void;
     onProfileSuccess?: (res: ProfileSuccessResponse) => void;
     className?: string;
-    variant?: "text" | "outlined" | "contained";
-    color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
     style?: CSSProperties;
     /** Children Component
      * @default "Login with Facebook" */
